@@ -36,9 +36,17 @@ function playSound(buffer, volume = 1.0, loop = false) {
     return source;
 }
 
+// Load all sounds
 Promise.all(sounds.map(loadSound)).then(() => {
     console.log('All sounds loaded');
+
+    // Add click event listener to start audio context and play sounds
     document.addEventListener('click', function(e) {
+        // Resume audio context
+        if (audioContext.state === 'suspended') {
+            audioContext.resume();
+        }
+
         const ripple = document.createElement('div');
         ripple.className = 'ripple';
         ripple.style.left = `${e.clientX}px`;
