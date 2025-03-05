@@ -10,29 +10,53 @@ document.addEventListener('mouseleave', function(e) {
     h1.style.transform = 'translate(0, 0)';
 });
 
-// Clicking
-
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 const sounds = ['sounds/OMI-A.mp3', 'sounds/OMI-D.mp3', 'sounds/OMI-Dup.mp3', 'sounds/OMI-F#.mp3', 'sounds/OMI-G.mp3'];
+const audioBuffers = {};
 
-document.addEventListener('click', function(e) {
-    const ripple = document.createElement('div');
-    ripple.className = 'ripple';
-    ripple.style.left = `${e.clientX}px`;
-    ripple.style.top = `${e.clientY}px`;
-    document.body.appendChild(ripple);
-    setTimeout(() => {
-        ripple.remove();
-    }, 1000);
+function loadSound(url) {
+    return fetch(url)
+        .then(response => response.arrayBuffer())
+        .then(data => audioContext.decodeAudioData(data))
+        .then(buffer => {
+            audioBuffers[url] = buffer;
+            console.log(`Loaded sound: ${url}`);
+        })
+        .catch(error => console.error(`Error loading sound: ${url}`, error));
+}
 
-    // Play random click sound
-    const sounds = ['sounds/OMI-A.mp3','sounds/OMI-A.mp3', 'sounds/OMI-D.mp3','sounds/OMI-D.mp3','sounds/OMI-D.mp3', 'sounds/OMI-Dup.mp3', 'sounds/OMI-F#.mp3', 'sounds/OMI-G.mp3'];
-    const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
-    const clickSound = new Audio(randomSound);
-    clickSound.volume = 0.5;
-    clickSound.play();
+function playSound(buffer, volume = 1.0, loop = false) {
+    const source = audioContext.createBufferSource();
+    const gainNode = audioContext.createGain();
+    source.buffer = buffer;
+    source.loop = loop;
+    gainNode.gain.value = volume;
+    source.connect(gainNode).connect(audioContext.destination);
+    source.start(0);
+    return source;
+}
+
+Promise.all(sounds.map(loadSound)).then(() => {
+    console.log('All sounds loaded');
+    document.addEventListener('click', function(e) {
+        const ripple = document.createElement('div');
+        ripple.className = 'ripple';
+        ripple.style.left = `${e.clientX}px`;
+        ripple.style.top = `${e.clientY}px`;
+        document.body.appendChild(ripple);
+        setTimeout(() => {
+            ripple.remove();
+        }, 1000);
+
+        // Play random click sound with priority to D and A
+        const weightedSounds = ['sounds/OMI-A.mp3', 'sounds/OMI-A.mp3', 'sounds/OMI-D.mp3', 'sounds/OMI-D.mp3', 'sounds/OMI-Dup.mp3', 'sounds/OMI-F#.mp3', 'sounds/OMI-G.mp3'];
+        const randomSound = weightedSounds[Math.floor(Math.random() * weightedSounds.length)];
+        playSound(audioBuffers[randomSound], 0.5);
+    });
+
+    // Load and play constant background sound
+    loadSound('sounds/OMI-Back.mp3').then(() => {
+        playSound(audioBuffers['sounds/OMI-Back.mp3'], 0.2, true);
+        console.log('Playing background sound');
+    });
 });
-
-// Play constant background sound
-const backgroundSound = new Audio('sounds/OMI-Back.mp3');
-backgroundSound.loop = true;
-backgroundSound.play();
