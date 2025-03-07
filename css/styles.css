@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
-    background-image: url('imgs/Background.png');
+    background-image: url('../imgs/Background.png');
     background-size: cover;
     background-position: center;
     color: #000000;
@@ -19,7 +19,7 @@ h1 {
     font-size: 2.5em;
     margin-bottom: 100px;
     text-align: center;
-    transition: transform 0.5s ease-out; /* Adjust the duration and easing function as needed */
+    transition: transform 0.5s ease-out;
 }
 p {
     font-size: 1.2em;
@@ -36,23 +36,6 @@ footer {
     position: absolute;
     bottom: 10px;
     font-size: 0.9em;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-}
-nav ul li {
-    display: inline;
-}
-nav ul li a {
-    text-decoration: none;
-    color: #0288d1;
-}
-nav ul li a:hover {
-    text-decoration: underline;
 }
 
 .ripple {
@@ -75,6 +58,19 @@ nav ul li a:hover {
         width: 200px;
         height: 200px;
         opacity: 0;
+    }
+}
+
+@keyframes suction-animation {
+    from {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+    }
+    to {
+        width: 20px;
+        height: 20px;
+        opacity: 1;
     }
 }
 
