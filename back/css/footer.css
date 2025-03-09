@@ -1,0 +1,21 @@
+footer {
+    position: absolute;
+    bottom: 10px;
+    font-size: 0.9em;
+    width: 100%;
+    text-align: center;
+}
+
+footer nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer p {
+    font-size: 1.2em;
+}
+
+footer nav p {
+    margin: 0;
+}

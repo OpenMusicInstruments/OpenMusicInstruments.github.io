@@ -1,0 +1,55 @@
+header {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header .toggle-sound-label {
+    margin-right: 10px;
+    font-size: 1em;
+    color: #000;
+}
+
+header .custom-checkbox {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    background-color: rgba(204, 204, 204, 0.2);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+header .custom-checkbox::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+}
+
+.toggle-sound {
+    display: none;
+}
+
+.toggle-sound:checked + .custom-checkbox {
+    background-color: rgba(2, 136, 209, 0.5);
+}
+
+.toggle-sound:checked + .custom-checkbox::after {
+    transform: translateX(20px);
+}
+
+.home-text {
+    margin: 0.5em;
+}
