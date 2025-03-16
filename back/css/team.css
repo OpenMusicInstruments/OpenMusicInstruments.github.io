@@ -20,3 +20,39 @@
     border-radius: 50%;
     margin: 10px;
 }
+
+.email-mobile {
+    display: none;
+}
+
+@media (orientation: portrait) {
+    .team-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5vw;
+    }
+
+    .team-container section {
+        width: 40vw;
+        max-width: 180px;
+    }
+
+    .memberpicture {
+        width: 30vw;
+        height: 30vw;
+        max-width: 120px;
+        max-height: 120px;
+    }
+
+    .role {
+        font-size: 4vw;
+    }
+
+    .email {
+        display: none;
+    }
+
+    .email-mobile {
+        display: block;
+    }
+}
