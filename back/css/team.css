@@ -26,6 +26,11 @@
 }
 
 @media (orientation: portrait) {
+    h1 {
+        top: 5vh;
+        margin-top: 1vh;
+    }
+    
     .team-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -44,8 +49,14 @@
         max-height: 120px;
     }
 
-    .role {
+    .team-container section p {
         font-size: 4vw;
+        margin: calc(0.5vh + 1vw) 0;
+    }
+
+    .team-container section p.role {
+        font-size: 5vw;
+        margin: calc(0.625vh + 1.25vw) 0;
     }
 
     .email {
