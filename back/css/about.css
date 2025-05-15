@@ -1,0 +1,47 @@
+#vision {
+    border-bottom: 1px solid #333;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #000000;
+    background-color: #ffffff;
+    font-size: large;
+}
+
+.filler {
+    background-color: #ffffff;
+    border-bottom: 1px solid #333;
+}
+
+#story {
+    border-bottom: 1px solid #333;
+    background-color: #111111;
+    color: #ffffff;
+}
+
+#story a {
+    color: #04a0cf;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#story a:hover {
+    color: #0486ad;
+}
+
+#values {
+    border-bottom: 1px solid #333;
+    background-color: #111111;
+    color: #ffffff;
+}
+
+#culture {
+    border-bottom: 0px solid #333;
+    background-color: #111111;
+    color: #ffffff;
+
+}
+
+.text {
+    scroll-margin-top: 90px;
+}

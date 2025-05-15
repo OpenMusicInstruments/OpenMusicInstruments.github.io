@@ -1,0 +1,50 @@
+.canvas-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 1.5rem;
+    font-family: 'Space Grotesk', Arial, sans-serif;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    text-shadow: 0 2px 8px #000;
+    z-index: 10;
+}
+
+.canvas-text-top {
+    top: 100px;
+}
+
+.canvas-text-top-big {
+    top: 200px;
+}
+
+.canvas-text-bottom {
+    bottom: 170px;
+}
+
+.ripple {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: ripple-animation 1s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple-animation {
+    from {
+        width: 20px;
+        height: 20px;
+        opacity: 1;
+    }
+    to {
+        width: 200px;
+        height: 200px;
+        opacity: 0;
+    }
+}

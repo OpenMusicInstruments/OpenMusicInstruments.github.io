@@ -1,58 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="back/css/common.css?v=1.1">
-    <link rel="stylesheet" href="back/css/animations.css?v=1.0">
-    <link rel="stylesheet" href="back/css/footer.css?v=1.0">
-    <link rel="stylesheet" href="back/css/team.css?v=1.2">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=1.3">
-    <title>OMI - Team</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team - OMI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="back/css/team.css" />
+  <link rel="stylesheet" href="back/css/common.css" />
+  <link rel="stylesheet" href="/back/css/sib.css" />
+  <link rel="icon" href="favicon.ico?" type="image/x-icon" />
 </head>
+
 <body>
+  <header>
+      <div><strong>Open Music Instruments</strong></div>
+      <a id="OMI-experience" href="/experience.html">>OMI Experience<</a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about.html">About Us</a>
+        <a href="/team.html">Team</a>
+        <a id="nav-investors" href="/investors.html">Investors</a>
+        <a href="/contact.html">Contact Us</a>
+      </nav>
+    </header>
+
+  <section class="team" id="team">
     <h1>Meet the Team</h1>
+    <br>
     <div class="team-container">
-        <section>
-            <img class="memberpicture" src="/back/imgs/team/fernando.webp" alt="Fernando Azeredo">
-            <p>Fernando Azeredo</p>
+        <section id="fernando">
+            <img class="memberpicture" src="/back/imgs/team/fernando.jpg" alt="Fernando Azeredo">
+            <p class="name">Fernando Azeredo</p>
             <p class="role">CPO</p>
-            <p><a href="mailto:fernando@openmusicinstruments.com" class="email">fernando@openmusicinstruments.com</a></p>
-            <p><a href="mailto:fernando@openmusicinstruments.com" class="email-mobile">Email</a></p>
+            <p class="sub-role">Co-founder</p>
+            <br>
+            <p><a href="mailto:fernando@openmusicinstruments.com" class="email">Email</a></p>
             <p><a href="https://www.linkedin.com/in/fernando-azeredo-9691451b7/">LinkedIn</a></p>
         </section>
-        <section>
-            <img class="memberpicture" src="/back/imgs/team/lora.webp" alt="Vicente Lora">
-            <p>Vicente Lora</p>
+        <section id="vicente">
+            <img class="memberpicture" src="/back/imgs/team/lora.jpg" alt="Vicente Lora">
+            <p class="name">Vicente Lora</p>
             <p class="role">CEO</p>
-            <p><a href="mailto:lora@openmusicinstruments.com" class="email">lora@openmusicinstruments.com</a></p>
-            <p><a href="mailto:lora@openmusicinstruments.com" class="email-mobile">Email</a></p>
+            <p class="sub-role">Co-founder</p>
+            <br>
+            <p><a href="mailto:lora@openmusicinstruments.com" class="email">Email</a></p>
             <p><a href="https://www.linkedin.com/in/vicentelora/">LinkedIn</a></p>
         </section>
-        <section>
-            <img class="memberpicture" src="/back/imgs/team/montes.webp" alt="Miguel Montes">
-            <p>Miguel Montes</p>
+        <section id="miguel">
+            <img class="memberpicture" src="/back/imgs/team/montes.jpg" alt="Miguel Montes">
+            <p class="name">Miguel Montes</p>
             <p class="role">Head of Software</p>
-            <p><a href="mailto:montes@openmusicinstruments.com" class="email">montes@openmusicinstruments.com</a></p>
-            <p><a href="mailto:montes@openmusicinstruments.com" class="email-mobile">Email</a></p>
+            <p class="sub-role">Co-founder</p>
+            <br>
+            <p><a href="mailto:montes@openmusicinstruments.com" class="email">Email</a></p>
             <p><a href="https://www.linkedin.com/in/miguel-lpm-montes/">LinkedIn</a></p>
         </section>
-        <section>
-            <img class="memberpicture" src="/back/imgs/team/sargo.webp" alt="Rui Sargo">
-            <p>Rui Sargo</p>
+        <section id="rui">
+            <img class="memberpicture" src="/back/imgs/team/sargo.jpg" alt="Rui Sargo">
+            <p class="name">Rui Sargo</p>
             <p class="role">Head of Hardware</p>
-            <p><a href="mailto:sargo@openmusicinstruments.com" class="email">sargo@openmusicinstruments.com</a></p>
-            <p><a href="mailto:sargo@openmusicinstruments.com" class="email-mobile">Email</a></p>
+            <p class="sub-role">Co-founder</p>
+            <br>
+            <p><a href="mailto:sargo@openmusicinstruments.com" class="email">Email</a></p>
             <p><a href="https://www.linkedin.com/in/ruiduartesargo/">LinkedIn</a></p>
         </section>
     </div>
-    <footer>
-        <nav>
-            <p><a href="/">Home</a></p>
-            <p><a href="/vision.html">The Vision</a></p>
-        </nav>
-        <p>&copy; OpenMusicInstruments 2025</p>
-    </footer>
-    <script src="/back/js/animations.js?v=1.1"></script>
+  </section>
+
+  <section id="group-photo">
+    <img src="/back/imgs/team/OMI-Team.jpg" alt="Group Photo">
+  </section>
+
+  <iframe class="sib-form-iframe"
+  src="https://sibforms.com/serve/MUIFAHuCONJMkzmHiIDNrOV4llsR9TYU737YSm_rMBupSWALl-x4x1-1W-cYReYFCLiYUQPGPhthnvkGdYjmIPRMfXI1t27z2uDFIr36GJF0PwsmLwQbbo0q84-wBLamVktDuGBAF4YN9X3EwfyLsJ5XZAEgxyH_vWnhOeGd7hda3_fhQbFYl-hkCU1Ct83h8vqZRVp9LOvpy0IT" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+
+  <section class="contact" id="contact">
+    <h2>Keep in touch!</h2>
+    <p>
+      <a href="mailto:hello@openmusicinstruments.com">Email</a>
+      <a href="https://linkedin.com/company/OpenMusicInstruments" target="_blank">LinkedIn</a>
+      <a href="https://instagram.com/OpenMusicInstruments" target="_blank">Instagram</a>
+    </p>
+  </section>
+
+
+  <footer>
+    <p>© OpenMusicInstruments 2025</p>
+    <p>Made in Portugal</p>
+  </footer>
 </body>
+
 </html>
