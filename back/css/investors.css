@@ -1,0 +1,52 @@
+#investors {
+  border-bottom: 1px solid #333;
+  background-color: #ffffff;
+  font-size: large;
+}
+
+#investors a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#investors a:hover {
+    color: #02b452;
+    text-decoration: underline;
+}
+
+#goals {
+  background-color: #111111;
+    color: #ffffff;
+}
+
+#accomplishments {
+  background-color: #ffffff;
+    color: #000000;
+    border-bottom: 1px solid #333;
+}
+
+#team-link {
+  text-align: center;
+}
+
+img {
+    width: 50%;
+    height: auto;
+    border-radius: 200px;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+    filter: grayscale(100%);
+}
+
+img:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+    filter: grayscale(0%);
+}
+
+@media (max-width: 768px) {
+  img {
+    width: 100%;
+  }
+}

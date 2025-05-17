@@ -1,55 +1,143 @@
-header {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
+.hero {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
     align-items: center;
-}
+    justify-content: center;
+    text-align: center;
+    padding: 5rem 2rem;
+  }
 
-header .toggle-sound-label {
-    margin-right: 10px;
-    font-size: 1em;
-    color: #000;
-}
-
-header .custom-checkbox {
-    position: relative;
-    width: 40px;
-    height: 20px;
-    background-color: rgba(204, 204, 204, 0.2);
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-header .custom-checkbox::after {
-    content: '';
-    width: 16px;
-    height: 16px;
-    background-color: #fff;
+.hero img {
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    transition: transform 0.3s;
+    object-fit: cover;
+    margin-bottom: 2rem;
+    border: 3px solid #fff;
 }
 
-.toggle-sound {
-    display: none;
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
 
-.toggle-sound:checked + .custom-checkbox {
-    background-color: rgba(2, 136, 209, 0.5);
+.hero p {
+    max-width: 600px;
+    font-size: 1.2rem;
+    color: #000000;
 }
 
-.toggle-sound:checked + .custom-checkbox::after {
-    transform: translateX(20px);
+.services {
+    padding: 4rem 2rem;
+    text-align: center;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    background-color: #ffffff;
+    color: #000000;
 }
 
-.home-text {
-    margin: 0.5em;
+#custom-instruments-card:hover {
+  background-color: #dbb448;
+}
+
+#social-impact-card:hover {
+  background-color: #06951b;
+}
+
+#diy-tools-card:hover {
+  background-color: #0c91ba;
+}
+
+.service {
+  scroll-margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+}
+
+.service button {
+  color: #ffffff;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.service button {
+  background-color: #111111;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  border-style: dashed;
+  border-width: 7px;
+}
+
+.service button:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+#custom-instruments {
+  border-bottom: 1px solid #333;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+#custom-instruments h2 {
+  color: #dbb448;
+}
+
+#custom-instruments-imgs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+#custom-instruments img {
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+#custom-instruments img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+#custom-instruments img:active {
+  transform: scale(0.95);
+}
+
+#custom-instruments button {
+  background-color: #dbb448;
+  border-color: #111111;
+}
+
+#social-impact {
+  border-bottom: 1px solid #333;
+}
+
+#social-impact h2 {
+  color: #06951b;
+}
+
+#social-impact button {
+  background-color: #06951b;
+  border-color: #ffffff;
+}
+
+#diy-tools {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+#diy-tools h2 {
+  color: #039ece;
+}
+
+#diy-tools button {
+  background-color: #039ece;
+  border-color: #111111;
 }

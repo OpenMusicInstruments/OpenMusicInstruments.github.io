@@ -1,34 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="back/css/common.css?v=1.1">
-    <link rel="stylesheet" href="back/css/animations.css?v=1.0">
-    <link rel="stylesheet" href="back/css/footer.css?v=1.0">
-    <link rel="stylesheet" href="back/css/home.css?v=1.0">
-    <link rel="icon" type="image/x-icon" href="favicon.ico?v=1.3">
-    <title>OMI - Open Music Instruments</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - OMI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/back/css/home.css" />
+  <link rel="stylesheet" href="/back/css/common.css" />
+  <link rel="stylesheet" href="/back/css/footer.css" />
+  <link rel="stylesheet" href="/back/css/cards.css" />
+  <link rel="stylesheet" href="/back/css/sib.css" />
+  <link rel="icon" href="/favicon.ico?" type="image/x-icon" />
 </head>
-<header>
-    <label for="toggle-sound" class="toggle-sound-label">Sound</label>
-    <input type="checkbox" id="toggle-sound" class="toggle-sound" checked>
-    <label for="toggle-sound" class="custom-checkbox"></label>
-</header>
+
 <body>
-    <h1>Open Music Instruments</h1>
-    <p class="home-text">Tell us what's on your mind:</p>
-    <p class="home-text"><a href="mailto:hello@openmusicinstruments.com">hello@openmusicinstruments.com</a></p>
-    <p class="home-text">For partnerships:</p>
-    <p class="home-text"><a href="mailto:partnerships@openmusicinstruments.com">partnerships@openmusicinstruments.com</a></p>
-    <footer>
-        <nav>
-            <p><a href="/vision.html">The Vision</a></p>
-            <p><a href="/team.html">The Team</a></p>
-        </nav>
-        <p>&copy; OpenMusicInstruments 2025</p>
-    </footer>
-    <script src="/back/js/animations.js?v=1.1"></script>
-    <script src="/back/js/audio.js?v=1.1"></script>
+  <header>
+      <div><strong>Open Music Instruments</strong></div>
+      <a id="OMI-experience" href="/experience.html">>OMI Experience<</a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about.html">About Us</a>
+        <a href="/team.html">Team</a>
+        <a id="nav-investors" href="/investors.html">Investors</a>
+        <a href="/contact.html">Contact Us</a>
+      </nav>
+    </header>
+
+  <section class="hero">
+    <img src="back/imgs/OMI.png" alt="OMI Logo">
+    <h1>OMI - Open Music Instruments</h1>
+    <p>What's your dream instrument?</p>
+  </section>
+
+  <section class="services" id="services">
+    <h2>Our services:</h2>
+    <section class="card-list" id="services-list">
+      <a href="#custom-instruments" class="card" id="custom-instruments-card">
+          <h3>Custom Digital Instruments</h3>
+          <p>Design & Implementation</p>
+      </a>
+      <a href="#social-impact" class="card" id="social-impact-card">
+          <h3>Social Impact</h3>
+          <p>Educational & Accessibility Projects</p>
+      </a>
+      <a href="#diy-tools" class="card" id="diy-tools-card">
+          <h3>DIY Tools</h3>
+          <p>Platform and kits for instrument building</p>
+      </a>
+    </section>
+  </section>
+
+  <section class="service" id="custom-instruments">
+    <h2>Custom Digital Instruments</h2>
+    <br>
+    <p>Do you have a concept of an instrument, but lack the technical knowledge?</p>
+    <br>
+    <section id="custom-instruments-imgs">
+      <img src="back/imgs/home/OMIbloop.png" alt="B-Loop Drawing">
+      <img src="back/imgs/home/OMIkeys.png" alt="Keyboard Drawing">
+      <img src="back/imgs/home/OMIVinyl.png" alt="Vinyl Player Drawing">
+    </section>
+    <br>
+    <p>We will build it for you.</p>
+    <br>
+    <a href="/services/custom-instruments.html"><button class="button">Learn More</button></a>
+  </section>
+
+  <section class="service" id="social-impact">
+    <h2>Social Impact</h2>
+    <br>
+    <p>We believe in Music as a path to a better future.</p>
+    <p>From <b>education to special needs</b>.</p>
+    <br>
+    <p>Tell us about your community and let's find together how we can help.</p>
+    <p>We create <b>instruments, tools and learning materials</b>.</p>
+    <br>
+    <a href="/services/social-impact.html"><button class="button">Learn More</button></a>
+  </section>
+
+  <section class="service" id="diy-tools">
+    <h2>DIY Tools</h2>
+    <br>
+    <p>We're working on a new inspiring tool to universalize the joy of instrument crafting.</p>
+    <br>
+    <p>Register your interest and we will keep you in the loop.</p>
+    <br>
+    <a href="/services/diy-tools.html"><button class="button">Learn More</button></a>
+  </section>
+
+  <iframe class="sib-form-iframe"
+  src="https://sibforms.com/serve/MUIFAHuCONJMkzmHiIDNrOV4llsR9TYU737YSm_rMBupSWALl-x4x1-1W-cYReYFCLiYUQPGPhthnvkGdYjmIPRMfXI1t27z2uDFIr36GJF0PwsmLwQbbo0q84-wBLamVktDuGBAF4YN9X3EwfyLsJ5XZAEgxyH_vWnhOeGd7hda3_fhQbFYl-hkCU1Ct83h8vqZRVp9LOvpy0IT" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+
+  <section class="contact" id="contact">
+    <h2>Keep in touch!</h2>
+    <p>
+      <a href="mailto:hello@openmusicinstruments.com">Email</a>
+      <a href="https://linkedin.com/company/OpenMusicInstruments" target="_blank">LinkedIn</a>
+      <a href="https://instagram.com/OpenMusicInstruments" target="_blank">Instagram</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>© OpenMusicInstruments 2025</p>
+    <p class="wave-text">
+      <span>M</span><span>a</span><span>d</span><span>e</span>
+      <span> </span>
+      <span>i</span><span>n</span>
+      <span> </span>
+      <span class="group green">p</span><span class="group green">o</span><span class="group green">r</span>
+      <span class="group yellow">t</span><span class="group yellow">u</span>
+      <span class="group red">g</span><span class="group red">a</span><span class="group red">l</span>
+    </p>
+  </footer>
 </body>
+
 </html>

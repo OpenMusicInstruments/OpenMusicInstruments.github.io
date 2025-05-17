@@ -1,0 +1,19 @@
+.text {
+    background-color: #111111;
+    color: white;
+    font-size: large;
+}
+
+.text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #06951b;
+}
+
+.text a {
+    color: #06951b;
+}
+
+.text a:hover {
+    color: #105d1b;
+}
