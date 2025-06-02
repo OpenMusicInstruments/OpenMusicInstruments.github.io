@@ -12,18 +12,25 @@
     -ms-user-select: none;
     text-shadow: 0 2px 8px #000;
     z-index: 10;
+    text-align: center;
+    line-height: 1.4;
+    max-width: 90vw;
+    font-size: clamp(1rem, 1.8vw, 1.5rem);
 }
 
 .canvas-text-top {
-    top: 100px;
+    top: 8vh;
 }
 
 .canvas-text-top-big {
-    top: 200px;
+    top: 17vh;
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
+    font-weight: 700;
 }
 
 .canvas-text-bottom {
-    bottom: 170px;
+    bottom: 15vh;
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
 }
 
 .ripple {
