@@ -7,148 +7,151 @@ document.getElementById('drawing').appendChild(app.canvas);
 
 // === Instrument shapes ===
 
-const bloop = [
-    {x: centerX - 120, y: centerY - 100},
-    {x: centerX + 120,  y: centerY - 100},
-    {x: centerX + 120,  y: centerY + 100},
-    {x: centerX - 120, y: centerY + 100},
-    {x: centerX - 120, y: centerY - 100},
-    {x: centerX - 90,  y: centerY - 70},
-    {x: centerX + 90,  y: centerY - 70},
-    {x: centerX + 90, y: centerY + 40},
-    {x: centerX - 90,  y: centerY + 40},
-    {x: centerX - 90,  y: centerY + 70},
-    {x: centerX - 70,  y: centerY + 70},
-    {x: centerX - 70,  y: centerY + 60},
-    {x: centerX - 50,  y: centerY + 70},
+function createShapes(centerX, centerY) {
+    const bloop = [
+        {x: centerX - 120, y: centerY - 100},
+        {x: centerX + 120,  y: centerY - 100},
+        {x: centerX + 120,  y: centerY + 100},
+        {x: centerX - 120, y: centerY + 100},
+        {x: centerX - 120, y: centerY - 100},
+        {x: centerX - 90,  y: centerY - 70},
+        {x: centerX + 90,  y: centerY - 70},
+        {x: centerX + 90, y: centerY + 40},
+        {x: centerX - 90,  y: centerY + 40},
+        {x: centerX - 90,  y: centerY + 70},
+        {x: centerX - 70,  y: centerY + 70},
+        {x: centerX - 70,  y: centerY + 60},
+        {x: centerX - 50,  y: centerY + 70},
 
-    {x: centerX - 40,  y: centerY + 70},
-    {x: centerX - 35,  y: centerY + 65},
-    {x: centerX - 30,  y: centerY + 60},
-    {x: centerX - 25,  y: centerY + 60},
-    {x: centerX - 20,  y: centerY + 65},
+        {x: centerX - 40,  y: centerY + 70},
+        {x: centerX - 35,  y: centerY + 65},
+        {x: centerX - 30,  y: centerY + 60},
+        {x: centerX - 25,  y: centerY + 60},
+        {x: centerX - 20,  y: centerY + 65},
 
-    {x: centerX - 15,  y: centerY + 70},
-    {x: centerX - 20,  y: centerY + 75},
-    {x: centerX - 25,  y: centerY + 80},
-    {x: centerX - 30,  y: centerY + 80},
-    {x: centerX - 35,  y: centerY + 75},
-    {x: centerX - 40,  y: centerY + 70},
+        {x: centerX - 15,  y: centerY + 70},
+        {x: centerX - 20,  y: centerY + 75},
+        {x: centerX - 25,  y: centerY + 80},
+        {x: centerX - 30,  y: centerY + 80},
+        {x: centerX - 35,  y: centerY + 75},
+        {x: centerX - 40,  y: centerY + 70},
 
-    {x: centerX - 50,  y: centerY + 70},
-    {x: centerX - 70,  y: centerY + 80},
-    {x: centerX - 70,  y: centerY + 70},
+        {x: centerX - 50,  y: centerY + 70},
+        {x: centerX - 70,  y: centerY + 80},
+        {x: centerX - 70,  y: centerY + 70},
 
-    {x: centerX - 90,  y: centerY + 70},
-    {x: centerX - 90,  y: centerY + 40},
-    {x: centerX - 90,  y: centerY - 70},
-    
-];
+        {x: centerX - 90,  y: centerY + 70},
+        {x: centerX - 90,  y: centerY + 40},
+        {x: centerX - 90,  y: centerY - 70},
+        
+    ];
 
-const keyboard = [
-    // Outer rectangle
-    {x: centerX - 150, y: centerY + 70},
-    {x: centerX - 170, y: centerY - 70},
-    {x: centerX + 170, y: centerY - 70},
+    const keyboard = [
+        // Outer rectangle
+        {x: centerX - 150, y: centerY + 70},
+        {x: centerX - 170, y: centerY - 70},
+        {x: centerX + 170, y: centerY - 70},
 
-    {x: centerX + 150, y: centerY - 40},
-    {x: centerX - 150, y: centerY - 40},
-    {x: centerX - 170, y: centerY - 70},
-    {x: centerX + 170, y: centerY - 70},
+        {x: centerX + 150, y: centerY - 40},
+        {x: centerX - 150, y: centerY - 40},
+        {x: centerX - 170, y: centerY - 70},
+        {x: centerX + 170, y: centerY - 70},
 
-    {x: centerX + 150, y: centerY + 70},
-    {x: centerX - 150, y: centerY + 70},
+        {x: centerX + 150, y: centerY + 70},
+        {x: centerX - 150, y: centerY + 70},
 
-    {x: centerX - 150, y: centerY + 70},
+        {x: centerX - 150, y: centerY + 70},
 
-    // Inner rectangle
-    {x: centerX - 120, y: centerY + 70},
-    {x: centerX - 120, y: centerY + 20},
-    {x: centerX + 120, y: centerY + 20},
-    {x: centerX + 120, y: centerY + 70},
+        // Inner rectangle
+        {x: centerX - 120, y: centerY + 70},
+        {x: centerX - 120, y: centerY + 20},
+        {x: centerX + 120, y: centerY + 20},
+        {x: centerX + 120, y: centerY + 70},
 
-    {x: centerX + 90, y: centerY + 70},
-    {x: centerX + 90, y: centerY + 20},
-    {x: centerX + 60, y: centerY + 20},
-    {x: centerX + 60, y: centerY + 70},
-    {x: centerX + 30, y: centerY + 70},
-    {x: centerX + 30, y: centerY + 20},
-    {x: centerX, y: centerY + 20},
-    {x: centerX, y: centerY + 70},
-    {x: centerX - 30, y: centerY + 70},
-    {x: centerX - 30, y: centerY + 20},
-    {x: centerX - 60, y: centerY + 20},
-    {x: centerX - 60, y: centerY + 70},
-    {x: centerX - 90, y: centerY + 70},
-    {x: centerX - 90, y: centerY + 20},
-    {x: centerX - 120, y: centerY + 20},
-    {x: centerX - 120, y: centerY + 70},
-];
+        {x: centerX + 90, y: centerY + 70},
+        {x: centerX + 90, y: centerY + 20},
+        {x: centerX + 60, y: centerY + 20},
+        {x: centerX + 60, y: centerY + 70},
+        {x: centerX + 30, y: centerY + 70},
+        {x: centerX + 30, y: centerY + 20},
+        {x: centerX, y: centerY + 20},
+        {x: centerX, y: centerY + 70},
+        {x: centerX - 30, y: centerY + 70},
+        {x: centerX - 30, y: centerY + 20},
+        {x: centerX - 60, y: centerY + 20},
+        {x: centerX - 60, y: centerY + 70},
+        {x: centerX - 90, y: centerY + 70},
+        {x: centerX - 90, y: centerY + 20},
+        {x: centerX - 120, y: centerY + 20},
+        {x: centerX - 120, y: centerY + 70},
+    ];
 
-const vinyl = [
-    // Outer circle (12 points approximating a circle)
-    {x: centerX, y: centerY - 100},
-    {x: centerX + 50, y: centerY - 87},
-    {x: centerX + 87, y: centerY - 50},
-    {x: centerX + 100, y: centerY},
-    {x: centerX + 87, y: centerY + 50},
-    {x: centerX + 50, y: centerY + 87},
-    {x: centerX, y: centerY + 100},
-    {x: centerX - 50, y: centerY + 87},
-    {x: centerX - 87, y: centerY + 50},
-    {x: centerX - 100, y: centerY},
-    {x: centerX - 87, y: centerY - 50},
-    {x: centerX - 50, y: centerY - 87},
+    const vinyl = [
+        // Outer circle (12 points approximating a circle)
+        {x: centerX, y: centerY - 100},
+        {x: centerX + 50, y: centerY - 87},
+        {x: centerX + 87, y: centerY - 50},
+        {x: centerX + 100, y: centerY},
+        {x: centerX + 87, y: centerY + 50},
+        {x: centerX + 50, y: centerY + 87},
+        {x: centerX, y: centerY + 100},
+        {x: centerX - 50, y: centerY + 87},
+        {x: centerX - 87, y: centerY + 50},
+        {x: centerX - 100, y: centerY},
+        {x: centerX - 87, y: centerY - 50},
+        {x: centerX - 50, y: centerY - 87},
 
-    {x: centerX, y: centerY - 100},
-    {x: centerX - 100, y: centerY - 100},
-    {x: centerX - 100, y: centerY + 100},
-    {x: centerX + 100, y: centerY + 100},
-    {x: centerX + 100, y: centerY - 100},
-    
+        {x: centerX, y: centerY - 100},
+        {x: centerX - 100, y: centerY - 100},
+        {x: centerX - 100, y: centerY + 100},
+        {x: centerX + 100, y: centerY + 100},
+        {x: centerX + 100, y: centerY - 100},
+        
 
-    {x: centerX, y: centerY },
-    {x: centerX, y: centerY },
-    {x: centerX, y: centerY },
+        {x: centerX, y: centerY },
+        {x: centerX, y: centerY },
+        {x: centerX, y: centerY },
 
-    {x: centerX + 20, y: centerY - 20},
+        {x: centerX + 20, y: centerY - 20},
 
-    {x: centerX + 25, y: centerY},
+        {x: centerX + 25, y: centerY},
 
-    {x: centerX + 20, y: centerY + 20},
+        {x: centerX + 20, y: centerY + 20},
 
-    {x: centerX, y: centerY + 25},
+        {x: centerX, y: centerY + 25},
 
-    {x: centerX - 20, y: centerY + 20},
+        {x: centerX - 20, y: centerY + 20},
 
-    {x: centerX - 25, y: centerY},
+        {x: centerX - 25, y: centerY},
 
-    {x: centerX - 20, y: centerY - 20},
+        {x: centerX - 20, y: centerY - 20},
 
-    {x: centerX, y: centerY - 25},
+        {x: centerX, y: centerY - 25},
 
-    {x: centerX + 20, y: centerY - 20},
-    {x: centerX + 100, y: centerY - 100},
+        {x: centerX + 20, y: centerY - 20},
+        {x: centerX + 100, y: centerY - 100},
 
-];
+    ];
 
-
-const instruments = [bloop, keyboard, vinyl];
+    return [bloop, keyboard, vinyl];
+}
 
 
 // === Helper to create a scrambled position version ===
 
-const margin = 50;
-
-const maxRadiusAmplifier = 0.3;
-
-const maxRadius = Math.min(
-    centerX, centerY, 
-    app.screen.width - centerX, 
-    app.screen.height - centerY
-) - margin;
-
 function scramblePositions(points) {
+    const centerX = app.screen.width / 2;
+    const centerY = app.screen.height / 2;
+
+    const margin = 50;
+    const maxRadiusAmplifier = 0.3;
+
+    const maxRadius = Math.min(
+        centerX, centerY,
+        app.screen.width - centerX,
+        app.screen.height - centerY
+    ) - margin;
+
     return points.map(() => {
         const angle = Math.random() * Math.PI * 2;
         const radius = Math.random() * maxRadius * maxRadiusAmplifier;
@@ -191,24 +194,41 @@ function drawShape(points) {
 }
 
 
-// === Animation state ===
+// === Initialization ===
 
+let instruments = [];
 let currentInstrumentIndex = 0;
-let phase = 'toScramble1'; // 'toScramble1' -> 'toScramble2' -> 'toNext' -> 'hold'
-let timer = 0;
+let phase, timer, shapeA, scrambledShape1, scrambledShape2, shapeB, currentPoints;
+
+function initShapesAndAnimation() {
+    const centerX = app.screen.width / 2;
+    const centerY = app.screen.height / 2;
+    instruments = createShapes(centerX, centerY);
+
+    currentInstrumentIndex = 0;
+    phase = 'toScramble1';
+    timer = 0;
+    shapeA = instruments[currentInstrumentIndex];
+    scrambledShape1 = scramblePositions(shapeA);
+    scrambledShape2 = scramblePositions(shapeA);
+    shapeB = instruments[(currentInstrumentIndex + 1) % instruments.length];
+    currentPoints = shapeA;
+    drawShape(currentPoints);
+}
+
+initShapesAndAnimation();
+
+const observer = new ResizeObserver(() => {
+    initShapesAndAnimation();
+});
+
+observer.observe(app.canvas);
+
+// === Animation loop ===
+
 const holdTime = 1; // seconds
 const scrambleTime = 0.5; // seconds
 
-let shapeA = instruments[currentInstrumentIndex];
-let scrambledShape1 = scramblePositions(shapeA);
-let scrambledShape2 = scramblePositions(shapeA);
-let shapeB = instruments[(currentInstrumentIndex + 1) % instruments.length];
-
-let currentPoints = shapeA;
-
-
-drawShape(currentPoints);
-// === Animation loop ===
 await new Promise(r => setTimeout(r, 900));
 
 app.ticker.add(() => {
