@@ -14,7 +14,7 @@
 }
 
 .card {
-  background-color: #111111;
+  background-color: #000000;
   padding: 2rem;
   transition: transform 0.3s ease, background-color 0.3s ease;
   cursor: pointer;
